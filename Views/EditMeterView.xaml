@@ -1,0 +1,165 @@
+﻿<UserControl x:Class="Meter_Attributes_Editor.Views.EditMeterView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d"
+             d:DesignHeight="800" d:DesignWidth="800"
+             Background="White">
+    <UserControl.Resources>
+        <Style TargetType="Label">
+            <Setter Property="Width" Value="350" />
+            <Setter Property="Margin" Value="10" />
+            <Setter Property="FontSize" Value="25" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+        </Style>
+        <Style TargetType="TextBox">
+            <Setter Property="Width" Value="150" />
+            <Setter Property="Margin" Value="0,0,0,0" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+            <Setter Property="Height" Value="25" />
+        </Style>
+        <Style TargetType="TextBlock">
+            <Setter Property="Width" Value="150" />
+            <Setter Property="Margin" Value="0,0,0,0" />
+            <Setter Property="TextWrapping" Value="Wrap"/>
+        </Style>
+        <Style TargetType="StackPanel">
+            <Setter Property="Width" Value="500" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Top" />
+        </Style>
+        <Style TargetType="DockPanel">
+            <Setter Property="Width" Value="350" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Width" Value="125" />
+            <Setter Property="Height" Value="35" />
+            <Setter Property="Margin" Value="20" />
+            <Setter Property="FontSize" Value="18" />
+            <Setter Property="Background" Value="LightBlue" />
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="18" />
+                </Style>
+            </Style.Resources>
+        </Style>
+        <Style x:Key="SelectButton" TargetType="Button">
+            <Setter Property="Width" Value="75" />
+            <Setter Property="Height" Value="25" />
+            <Setter Property="Margin" Value="0,10,0,0" />
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10" />
+                </Style>
+            </Style.Resources>
+        </Style>
+        <Style x:Key="ControlButton" TargetType="Button">
+            <Setter Property="Width" Value="100" />
+            <Setter Property="Height" Value="35" />
+            <Setter Property="Margin" Value="10" />
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Style.Resources>
+                <Style TargetType="Border">
+                    <Setter Property="CornerRadius" Value="10" />
+                </Style>
+            </Style.Resources>
+        </Style>
+        <Style TargetType="ComboBox">
+            <Setter Property="Width" Value="200" />
+            <Setter Property="Height" Value="35" />
+            <Setter Property="FontSize" Value="20" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+        </Style>
+        <Style x:Key="FieldComboBox" TargetType="ComboBox">
+            <Setter Property="Width" Value="150" />
+            <Setter Property="HorizontalContentAlignment" Value="Center" />
+            <Setter Property="VerticalContentAlignment" Value="Center" />
+        </Style>
+    </UserControl.Resources>
+    
+    <Grid x:Name="editMeterView" Visibility="Visible">
+        <StackPanel Grid.Row="1" x:Name="selectMeterToEdit" Margin="0,25,0,0" HorizontalAlignment="Center" VerticalAlignment="Center" Visibility="Visible">
+            <Label Content="Select Part Number To Edit" FontSize="20" />
+            <ComboBox x:Name="partNumberSelector" SelectionChanged="PartNumberSelector_SelectionChanged" />
+            <Button x:Name="selectMeter" Content="SELECT" Click="SelectMeter_Click" />
+        </StackPanel>
+
+        <Grid x:Name="editMeterGrid" Visibility="Collapsed">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="1*" />
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+                <RowDefinition Height="1*" />
+            </Grid.RowDefinitions>
+
+            <Grid Background="#FFDBF5FD" Grid.ColumnSpan="2" Grid.Row="0"/>
+
+            <DockPanel Grid.Column="0" Grid.Row="0" Margin="5">
+                <TextBlock Text="Part Number:" />
+                <TextBox x:Name="partNumber" TextChanged="PartNumber_TextChanged" PreviewTextInput="NumberValidationTextBox"/>
+            </DockPanel>
+            <DockPanel Grid.Column="1" Grid.Row="0">
+                <TextBlock Text="Meter Name:" />
+                <TextBox x:Name="meterName" TextChanged="MeterName_TextChanged" />
+            </DockPanel>
+            
+            <Grid Background="#FFCDFFE7" Grid.ColumnSpan="2" Grid.Row="1"/>
+
+            <DockPanel Grid.Column="0" Grid.Row="1">
+                <TextBlock Text="Model Description:" />
+                <TextBox x:Name="modelDescription" TextChanged="ModelDescription_TextChanged" />
+            </DockPanel>
+            <DockPanel Grid.Column="1" Grid.Row="1">
+                <TextBlock Text="Model ID:" />
+                <TextBox x:Name="modelID" TextChanged="ModelID_TextChanged" />
+            </DockPanel>
+            
+            <Grid Background="LightGoldenrodYellow" Grid.ColumnSpan="2" Grid.Row="2"/>
+
+            <DockPanel Grid.Column="0" Grid.Row="2">
+                <TextBlock Text="Country Code:" />
+                <TextBox x:Name="countryCode" TextChanged="CountryCode_TextChanged" />
+            </DockPanel>
+            <DockPanel Grid.Column="1" Grid.Row="2">
+                <TextBlock Text="Language Code:" />
+                <TextBox x:Name="languageCode" TextChanged="LanguageCode_TextChanged" />
+            </DockPanel>
+            
+            <Grid Background="#FFDBF5FD" Grid.ColumnSpan="2" Grid.Row="3"/>
+
+            <DockPanel Grid.Column="0" Grid.Row="3">
+                <TextBlock Text="DCS Production ID:" />
+                <TextBox x:Name="dcsProductionID" TextChanged="DcsProductionID_TextChanged" />
+            </DockPanel>            
+            <DockPanel Grid.Column="1" Grid.Row="3">
+                <TextBlock Text="Board ID Code:" />
+                <TextBox x:Name="boardIDCode" TextChanged="BoardIDCode_TextChanged" />
+            </DockPanel>
+            
+            <Grid Background="#FFCDFFE7" Grid.ColumnSpan="2" Grid.Row="4"/>
+
+            <DockPanel Grid.Column="0" Grid.Row="4">
+                <TextBlock Text="Host Software File Format:" />
+                <StackPanel>
+                    <TextBox x:Name="hostSoftwareFileFormat" />
+                    <Button x:Name="openFileHostSoftwareFileFormat" Content="SELECT" Style="{DynamicResource SelectButton}" Click="OpenFileHostSoftwareFileFormat_Click" />
+                </StackPanel>
+            </DockPanel>
+            
+            <Grid Background="LightGoldenrodYellow" Grid.ColumnSpan="2" Grid.Row="5"/>
+
+        </Grid>
+    </Grid>
+</UserControl>
