@@ -169,6 +169,8 @@ namespace Meter_Attributes_Editor.Views
             // Enable the first row strip reader button on reset. addMeterView has 9 children initially. 
             StripReaderDynamicRow dynamicRow = addMeterView.Children[15] as StripReaderDynamicRow;
             dynamicRow.stripReaderSoftwareFile.Text = "";
+            dynamicRow.stripReaderSoftwareID.Text = "";
+            dynamicRow.stripReaderSoftwareType.Text = "Gen 1.75";
             dynamicRow.newStripReaderRow.IsEnabled = true;
 
             // Reset the elements list to only support up to 1 strip reader row. 
@@ -204,10 +206,14 @@ namespace Meter_Attributes_Editor.Views
                 partNumbers.Clear();
             }
 
+            // Update the meter id attribute.
+            int meterIDCount = 1;
             foreach (XmlNode meter in meterEntries)
             {
                 partNumbers.Add(meter.FirstChild.InnerText);
+                meter.Attributes["id"].Value = meterIDCount++.ToString();
             }
+            MeterAttributesFile.Save(MeterAttributesFilePath);
         }
         #endregion
 
@@ -263,6 +269,7 @@ namespace Meter_Attributes_Editor.Views
             {
                 meterID.Value = (meterIDList.Count + 1).ToString();
             }
+
             // Set the latest meter id count with its appropriate meter ID
             newMeter.SetAttributeNode(meterID);
             saveCount++;

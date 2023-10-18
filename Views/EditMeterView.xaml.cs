@@ -116,6 +116,8 @@ namespace Meter_Attributes_Editor.Views
             // Enable the first row strip reader button on reset. editMeterGrid has 9 children initially. 
             StripReaderDynamicRow dynamicRow = editMeterGrid.Children[15] as StripReaderDynamicRow;
             dynamicRow.stripReaderSoftwareFile.Text = "";
+            dynamicRow.stripReaderSoftwareID.Text = "";
+            dynamicRow.stripReaderSoftwareType.Text = "Gen 1.75";
             dynamicRow.newStripReaderRow.IsEnabled = true;
 
             Elements = new string[][] {
@@ -168,10 +170,14 @@ namespace Meter_Attributes_Editor.Views
                 partNumbers.Clear();
             }
 
+            // Update the meter id attribute.
+            int meterIDCount = 1;
             foreach (XmlNode meter in meterEntries)
             {
                 partNumbers.Add(meter.FirstChild.InnerText);
+                meter.Attributes["id"].Value = meterIDCount++.ToString();
             }
+            MeterAttributesFile.Save(MeterAttributesFilePath);
         }
         #endregion
 
@@ -726,7 +732,9 @@ namespace Meter_Attributes_Editor.Views
         {
             if (partNumberSelector.SelectedIndex != -1)
             {
-                meterXPath = "/MeterConfigurations/Meter[PartNumber=" + partNumberSelector.SelectedItem.ToString() + "]";
+                int meterID = partNumberSelector.SelectedIndex + 1;
+                meterXPath = "/MeterConfigurations/Meter[@id=" + meterID.ToString() + "]"; 
+                //meterXPath = "/MeterConfigurations/Meter[PartNumber=" + partNumberSelector.SelectedItem.ToString() + "]";
                 try
                 {
                     meter = ConfigurationRecords.SelectSingleNode(meterXPath);

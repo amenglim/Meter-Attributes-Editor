@@ -79,10 +79,14 @@ namespace Meter_Attributes_Editor.Views
                 partNumbers.Clear();
             }
 
+            // Update the meter id attribute.
+            int meterIDCount = 1;
             foreach (XmlNode meter in meterEntries)
             {
                 partNumbers.Add(meter.FirstChild.InnerText);
+                meter.Attributes["id"].Value = meterIDCount++.ToString();
             }
+            MeterAttributesFile.Save(MeterAttributesFilePath);
         }
         #endregion
 
@@ -91,7 +95,11 @@ namespace Meter_Attributes_Editor.Views
         {
             if (partNumberSelector.SelectedIndex != -1)
             {
-                meterXPath = "/MeterConfigurations/Meter[PartNumber=" + partNumberSelector.SelectedItem.ToString() + "]";
+                // Use meter id to differentiate between multiple part numbers with the same part number. 
+                int meterID = partNumberSelector.SelectedIndex + 1;
+                meterXPath = "/MeterConfigurations/Meter[@id=" + meterID.ToString() + "]";
+
+                //partNumberPath = "/MeterConfigurations/Meter[PartNumber=" + partNumberSelector.SelectedItem.ToString() + "]";
                 try
                 {
                     meter = ConfigurationRecords.SelectSingleNode(meterXPath);

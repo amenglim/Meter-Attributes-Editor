@@ -18,7 +18,7 @@
             </Style.Resources>
             <Setter Property="BorderBrush" Value="Black" />
             <Setter Property="BorderThickness" Value="2" />
-            <Setter Property="Background" Value="MidnightBlue" />
+            <Setter Property="Background" Value="#1A76A9" />
             <Setter Property="Foreground" Value="White" />
             <Setter Property="FontSize" Value="18" />
             <Setter Property="Width" Value="200" />
@@ -70,7 +70,7 @@
             <RowDefinition Height="100" />
             <RowDefinition Height="5*" />
             <RowDefinition Height="1*" />
-        </Grid.RowDefinitions>
+        </Grid.RowDefinitions>       
 
         <Menu Grid.Row="0">
             <MenuItem Header="_File">
@@ -95,7 +95,7 @@
                 </MenuItem>
             </MenuItem>
         </Menu>
-
+        
         <Border Grid.Row="1" BorderBrush="Black" BorderThickness="0,1,0,2">
             <Rectangle Fill="#E9E9E9" />
         </Border>
@@ -108,8 +108,20 @@
                 </TextBlock>
             </StackPanel>
         </DockPanel>
-        
-        <StackPanel Grid.Row="2" x:Name="mainMenuView" Margin="0,0,0,50">
+
+        <TextBlock Grid.Row="2" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,150" x:Name="passwordPrompt">
+            To use the Meter Attributes XML File Editor, 
+            <LineBreak></LineBreak>
+            enter the required password:    
+        </TextBlock>
+        <PasswordBox Grid.Row="2" Height="50" Width="250" Margin="0,0,0,0" x:Name="passwordBox" FontSize="25" BorderBrush="Black" BorderThickness="1.5"
+                     Background="LightYellow"  Foreground="Black" FontWeight="Bold" MaxLength="25" PasswordChar="*"
+                     HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
+
+        <Button Grid.Row="2" Background="Lime" x:Name="submitPassword" IsDefault="True" FontWeight="Bold" Foreground="Black" Content="Enter" Click="submitPassword_Clicked" Margin="0,150,0,0"/>
+
+
+        <StackPanel Grid.Row="2" x:Name="mainMenuView" Margin="0,0,0,50" Visibility="Collapsed">
             <TextBlock Width="650" FontSize="18" TextAlignment="Center">
                 Welcome to the Meter Attributes XML File Editor.
                 <LineBreak />
@@ -125,8 +137,8 @@
         <uc:AddMeterView Grid.Row="2" x:Name="addMeterView" Visibility="Collapsed" />
         <uc:EditMeterView Grid.Row="2" x:Name="editMeterView" Visibility="Collapsed" />
         <uc:DeleteMeterView Grid.Row="2" x:Name="deleteMeterView" Visibility="Collapsed" />
-        
-        <StackPanel Grid.Row="3">
+
+        <StackPanel Grid.Row="3" x:Name="mainMenuBottomView" Visibility="Collapsed">
             <CheckBox x:Name="createBackup" Content="Create Backup" HorizontalAlignment="Center" VerticalAlignment="Center" />
             <DockPanel Width="250">
                 <Button x:Name="saveFile" Content="Save" Click="SaveFile_Click" Style="{ DynamicResource ControlButton }" />

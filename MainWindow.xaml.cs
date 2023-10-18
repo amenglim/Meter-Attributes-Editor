@@ -4,6 +4,7 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 
@@ -18,7 +19,7 @@ namespace Meter_Attributes_Editor
         private const string MeterAttributesFilePath = "C:\\Hospital Meter ATS\\Configurations\\MeterConfigurations.xml";
 
         private const string Version = "0.3";
-        private const string Author = "Zachary Johnson & Anthony Meng-Lim";
+        private const string Author = "Zachary Johnson\nAnthony Meng-Lim";
         private const string BuildDate = "10/17/2023";
 
         private string saveLocation = "";
@@ -32,7 +33,7 @@ namespace Meter_Attributes_Editor
 
         public MainWindow()
         {
-            InitializeComponent();
+            InitializeComponent();            
 
             createBackup.Visibility = Collapsed;
             saveFile.Visibility = Collapsed;
@@ -155,6 +156,22 @@ namespace Meter_Attributes_Editor
                                  "Build Date: " + BuildDate;
 
             MessageBox.Show(versionInfo, "Version Information", MessageBoxButton.OK, MessageBoxImage.Information);
+        }
+
+        private void submitPassword_Clicked(object sender, RoutedEventArgs e)
+        {
+            if (passwordBox.Password == "Nova1000")
+            {
+                mainMenuView.Visibility = Visibility.Visible;
+                mainMenuBottomView.Visibility = Visibility.Visible;
+                passwordBox.Visibility = Visibility.Collapsed;
+                passwordPrompt.Visibility= Visibility.Collapsed;
+                submitPassword.Visibility= Visibility.Collapsed;
+            }
+            else
+            {
+                MessageBox.Show("Incorrect password, please try again.", "Incorrect Password", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
     }
 }

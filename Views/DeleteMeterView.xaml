@@ -27,10 +27,11 @@
         </Style>
         <Style TargetType="Button">
             <Setter Property="Width" Value="125" />
-            <Setter Property="Height" Value="35" />
+            <Setter Property="Height" Value="40" />
             <Setter Property="Margin" Value="20" />
-            <Setter Property="FontSize" Value="18" />
-            <Setter Property="Background" Value="LightBlue" />
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="Background" Value="#1A76A9" />
+            <Setter Property="Foreground" Value="White" />
             <Style.Resources>
                 <Style TargetType="Border">
                     <Setter Property="CornerRadius" Value="18" />
@@ -51,7 +52,7 @@
             <Label Content="Delete Meter" Margin="0,0,0,0"/>
             <TextBlock TextWrapping="Wrap" Width="475" Margin="5">
                 Use the dropdown box below to select the meter from the XML file that you would like to delete and
-                press the delete button to remove the entry from the configuration file.
+                press the <Bold>DELETE</Bold> button to remove the entry from the configuration file.
             </TextBlock>
         </StackPanel>
 
