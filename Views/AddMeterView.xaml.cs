@@ -309,10 +309,6 @@ namespace Meter_Attributes_Editor.Views
                             {
                                 stripReaderSoftwareItem = stripReaderSoftwareItem.Replace(" ", "");
                             }
-                            if (stripReaderSoftwareItem.Contains("."))
-                            {
-                                stripReaderSoftwareItem = stripReaderSoftwareItem.Replace(".", "p");
-                            }
                             // Gets the last child for the newMeter node (StripReaderSoftware).
                             stripReaderSoftwareNode = newMeter.LastChild;
                             newMeterAttribute = MeterAttributesFile.CreateElement(stripReaderSoftwareItem);
@@ -330,7 +326,7 @@ namespace Meter_Attributes_Editor.Views
                             {
                                 stripIDNode3 = stripReaderSoftwareNode.LastChild;
                             }
-                            // Need elements 10, 13, 16 for Strip ID
+                            // Need elements 10, 13, 16 for Strip ID type node.
                             elementCount += 3;
 
                         }

@@ -102,20 +102,6 @@ C:\Hospital Meter ATS\Meter Attributes Editor\bin\Debug\net7.0-windows\Resources
 C:\Hospital Meter ATS\Meter Attributes Editor\bin\Debug\net7.0-windows\Resources\Icons\view_results.png
 C:\Hospital Meter ATS\Meter Attributes Editor\bin\Debug\net7.0-windows\Resources\Images\meter-attributes-editor.ico
 C:\Hospital Meter ATS\Meter Attributes Editor\bin\Debug\net7.0-windows\Resources\Images\nova_biomedical-logo.bmp
-C:\! Projects\Hospital Meter\Meter-Attributes-Editor\obj\Debug\net7.0-windows\Meter Attributes Editor.csproj.AssemblyReference.cache
-C:\! Projects\Hospital Meter\Meter-Attributes-Editor\obj\Debug\net7.0-windows\Views\AddMeterView.baml
-C:\! Projects\Hospital Meter\Meter-Attributes-Editor\obj\Debug\net7.0-windows\Views\DeleteMeterView.baml
-C:\! Projects\Hospital Meter\Meter-Attributes-Editor\obj\Debug\net7.0-windows\Views\EditMeterView.baml
-C:\! Projects\Hospital Meter\Meter-Attributes-Editor\obj\Debug\net7.0-windows\MainWindow.g.cs
-C:\! Projects\Hospital Meter\Meter-Attributes-Editor\obj\Debug\net7.0-windows\Views\AddMeterView.g.cs
-C:\! Projects\Hospital Meter\Meter-Attributes-Editor\obj\Debug\net7.0-windows\Views\DeleteMeterView.g.cs
-C:\! Projects\Hospital Meter\Meter-Attributes-Editor\obj\Debug\net7.0-windows\Views\EditMeterView.g.cs
-C:\! Projects\Hospital Meter\Meter-Attributes-Editor\obj\Debug\net7.0-windows\Views\StripReaderDynamicRow.g.cs
-C:\! Projects\Hospital Meter\Meter-Attributes-Editor\obj\Debug\net7.0-windows\App.g.cs
-C:\! Projects\Hospital Meter\Meter-Attributes-Editor\obj\Debug\net7.0-windows\Meter Attributes Editor_Content.g.cs
-C:\! Projects\Hospital Meter\Meter-Attributes-Editor\obj\Debug\net7.0-windows\GeneratedInternalTypeHelper.g.cs
-C:\! Projects\Hospital Meter\Meter-Attributes-Editor\obj\Debug\net7.0-windows\Meter Attributes Editor_MarkupCompile.cache
-C:\! Projects\Hospital Meter\Meter-Attributes-Editor\obj\Debug\net7.0-windows\Meter Attributes Editor_MarkupCompile.lref
 C:\! Projects\Hospital Meter\Meter-Attributes-Editor\bin\Debug\net7.0-windows\Resources\Icons\about.png
 C:\! Projects\Hospital Meter\Meter-Attributes-Editor\bin\Debug\net7.0-windows\Resources\Icons\check.png
 C:\! Projects\Hospital Meter\Meter-Attributes-Editor\bin\Debug\net7.0-windows\Resources\Icons\exit.png
@@ -135,6 +121,20 @@ C:\! Projects\Hospital Meter\Meter-Attributes-Editor\bin\Debug\net7.0-windows\Me
 C:\! Projects\Hospital Meter\Meter-Attributes-Editor\bin\Debug\net7.0-windows\Meter Attributes Editor.runtimeconfig.json
 C:\! Projects\Hospital Meter\Meter-Attributes-Editor\bin\Debug\net7.0-windows\Meter Attributes Editor.dll
 C:\! Projects\Hospital Meter\Meter-Attributes-Editor\bin\Debug\net7.0-windows\Meter Attributes Editor.pdb
+C:\! Projects\Hospital Meter\Meter-Attributes-Editor\obj\Debug\net7.0-windows\Meter Attributes Editor.csproj.AssemblyReference.cache
+C:\! Projects\Hospital Meter\Meter-Attributes-Editor\obj\Debug\net7.0-windows\Views\AddMeterView.baml
+C:\! Projects\Hospital Meter\Meter-Attributes-Editor\obj\Debug\net7.0-windows\Views\DeleteMeterView.baml
+C:\! Projects\Hospital Meter\Meter-Attributes-Editor\obj\Debug\net7.0-windows\Views\EditMeterView.baml
+C:\! Projects\Hospital Meter\Meter-Attributes-Editor\obj\Debug\net7.0-windows\MainWindow.g.cs
+C:\! Projects\Hospital Meter\Meter-Attributes-Editor\obj\Debug\net7.0-windows\Views\AddMeterView.g.cs
+C:\! Projects\Hospital Meter\Meter-Attributes-Editor\obj\Debug\net7.0-windows\Views\DeleteMeterView.g.cs
+C:\! Projects\Hospital Meter\Meter-Attributes-Editor\obj\Debug\net7.0-windows\Views\EditMeterView.g.cs
+C:\! Projects\Hospital Meter\Meter-Attributes-Editor\obj\Debug\net7.0-windows\Views\StripReaderDynamicRow.g.cs
+C:\! Projects\Hospital Meter\Meter-Attributes-Editor\obj\Debug\net7.0-windows\App.g.cs
+C:\! Projects\Hospital Meter\Meter-Attributes-Editor\obj\Debug\net7.0-windows\Meter Attributes Editor_Content.g.cs
+C:\! Projects\Hospital Meter\Meter-Attributes-Editor\obj\Debug\net7.0-windows\GeneratedInternalTypeHelper.g.cs
+C:\! Projects\Hospital Meter\Meter-Attributes-Editor\obj\Debug\net7.0-windows\Meter Attributes Editor_MarkupCompile.cache
+C:\! Projects\Hospital Meter\Meter-Attributes-Editor\obj\Debug\net7.0-windows\Meter Attributes Editor_MarkupCompile.lref
 C:\! Projects\Hospital Meter\Meter-Attributes-Editor\obj\Debug\net7.0-windows\MainWindow.baml
 C:\! Projects\Hospital Meter\Meter-Attributes-Editor\obj\Debug\net7.0-windows\Views\StripReaderDynamicRow.baml
 C:\! Projects\Hospital Meter\Meter-Attributes-Editor\obj\Debug\net7.0-windows\Meter Attributes Editor.g.resources

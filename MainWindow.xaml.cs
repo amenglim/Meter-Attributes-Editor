@@ -19,7 +19,7 @@ namespace Meter_Attributes_Editor
         private const string MeterAttributesFilePath = "C:\\Hospital Meter ATS\\Configurations\\MeterConfigurations.xml";
 
         private const string Version = "0.3";
-        private const string Author = "Zachary Johnson\nAnthony Meng-Lim";
+        private const string Author = "Zachary Johnson & Anthony Meng-Lim";
         private const string BuildDate = "10/17/2023";
 
         private string saveLocation = "";

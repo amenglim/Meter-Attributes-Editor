@@ -363,10 +363,6 @@ namespace Meter_Attributes_Editor.Views
             {
                 stripReaderSoftwareItem = stripReaderSoftwareItem.Replace(" ", "");
             }
-            if (stripReaderSoftwareItem.Contains("."))
-            {
-                stripReaderSoftwareItem = stripReaderSoftwareItem.Replace(".", "p");
-            }
             oldStripReaderSoftwareType = stripReaderSoftwareNode.FirstChild;
             newStripReaderSoftwareType = MeterAttributesFile.CreateElement(stripReaderSoftwareItem);
             stripReaderSoftwareNode.ReplaceChild(newStripReaderSoftwareType, oldStripReaderSoftwareType);
@@ -405,10 +401,6 @@ namespace Meter_Attributes_Editor.Views
             {
                 stripReaderSoftwareItem = stripReaderSoftwareItem.Replace(" ", "");
             }
-            if (stripReaderSoftwareItem.Contains("."))
-            {
-                stripReaderSoftwareItem = stripReaderSoftwareItem.Replace(".", "p");
-            }
             oldStripReaderSoftwareType = stripReaderSoftwareNode.ChildNodes[1];
             newStripReaderSoftwareType = MeterAttributesFile.CreateElement(stripReaderSoftwareItem);
             stripReaderSoftwareNode.ReplaceChild(newStripReaderSoftwareType, oldStripReaderSoftwareType);
@@ -446,10 +438,6 @@ namespace Meter_Attributes_Editor.Views
             if (stripReaderSoftwareItem.Contains(" "))
             {
                 stripReaderSoftwareItem = stripReaderSoftwareItem.Replace(" ", "");
-            }
-            if (stripReaderSoftwareItem.Contains("."))
-            {
-                stripReaderSoftwareItem = stripReaderSoftwareItem.Replace(".", "p");
             }
             oldStripReaderSoftwareType = stripReaderSoftwareNode.ChildNodes[2];
             newStripReaderSoftwareType = MeterAttributesFile.CreateElement(stripReaderSoftwareItem);
