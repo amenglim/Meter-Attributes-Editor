@@ -132,18 +132,21 @@ namespace Meter_Attributes_Editor
 
         private void MenuResetEditor_Click(object sender, RoutedEventArgs e)
         {
-            mainMenuView.Visibility = Visible;
-            addMeterView.Visibility = Collapsed;
-            editMeterView.Visibility = Collapsed;
-            deleteMeterView.Visibility = Collapsed;
-            saveFile.Visibility = Collapsed;
-            createBackup.Visibility = Collapsed;
+            if (passwordBox.Password == "Nova1000" || passwordShow.Text == "Nova1000")
+            {
+                mainMenuView.Visibility = Visible;
+                addMeterView.Visibility = Collapsed;
+                editMeterView.Visibility = Collapsed;
+                deleteMeterView.Visibility = Collapsed;
+                saveFile.Visibility = Collapsed;
+                createBackup.Visibility = Collapsed;
 
-            _addMeterView?.Reset();
-            _editMeterView?.Reset();
-            _deleteMeterView?.Reset();
+                _addMeterView?.Reset();
+                _editMeterView?.Reset();
+                _deleteMeterView?.Reset();
 
-            _addMeterView.ConfigureElements();
+                _addMeterView.ConfigureElements();
+            }
         }
 
         private void MenuSaveReport_Click(object sender, RoutedEventArgs e)
