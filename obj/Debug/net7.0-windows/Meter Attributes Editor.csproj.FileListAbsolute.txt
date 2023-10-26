@@ -149,3 +149,5 @@ C:\! Projects\Hospital Meter\Meter-Attributes-Editor\obj\Debug\net7.0-windows\re
 C:\! Projects\Hospital Meter\Meter-Attributes-Editor\obj\Debug\net7.0-windows\Meter Attributes Editor.pdb
 C:\! Projects\Hospital Meter\Meter-Attributes-Editor\obj\Debug\net7.0-windows\Meter Attributes Editor.genruntimeconfig.cache
 C:\! Projects\Hospital Meter\Meter-Attributes-Editor\obj\Debug\net7.0-windows\ref\Meter Attributes Editor.dll
+C:\! Projects\Hospital Meter\Meter-Attributes-Editor\bin\Debug\net7.0-windows\Resources\SVN\BuildDate.txt
+C:\! Projects\Hospital Meter\Meter-Attributes-Editor\bin\Debug\net7.0-windows\Resources\SVN\SvnInfo.cs.tpl

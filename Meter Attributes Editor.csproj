@@ -14,6 +14,7 @@
 		<None Remove="Resources\Icons\exit.png" />
 		<None Remove="Resources\Icons\reset.png" />
 		<None Remove="Resources\Images\nova_biomedical-logo.bmp" />
+		<None Remove="Resources\SVN\SvnInfo.cs.tpl" />
 	</ItemGroup>
 
 	<ItemGroup>

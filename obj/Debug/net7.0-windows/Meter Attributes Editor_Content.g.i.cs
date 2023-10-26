@@ -25,5 +25,7 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/icons/view_results.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/images/meter-attributes-editor.ico")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/images/nova_biomedical-logo.bmp")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/svn/builddate.txt")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/svn/svninfo.cs.tpl")]
 
 

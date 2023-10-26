@@ -1,5 +1,4 @@
 ﻿using Meter_Attributes_Editor.Views;
-
 using System;
 using System.Diagnostics;
 using System.IO;
@@ -8,6 +7,7 @@ using System.Windows.Controls;
 using System.Windows.Controls.Primitives;
 using System.Windows.Input;
 using System.Windows.Media;
+//using Meter_Attributes_Editor.Resources.SVN;
 
 namespace Meter_Attributes_Editor
 {
@@ -21,7 +21,11 @@ namespace Meter_Attributes_Editor
 
         private const string Version = "0.3";
         private const string Author = "Anthony Meng-Lim";
-        private const string BuildDate = "10/23/2023";
+        private const string BuildDate = "10/26/2023";
+
+        //private const string Version = "1.0." + SvnInfo.REVISION;
+        //private const string Author = "Anthony Meng-Lim";
+        //private const string BuildDate = SvnInfo.BUILD_DATE;
 
         private string saveLocation = "";
 
