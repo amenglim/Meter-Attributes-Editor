@@ -11,12 +11,14 @@ namespace Meter_Attributes_Editor.Views
         #region Global Variables
         private static readonly XmlDocument MeterAttributesFile = new();
         public List<string> partNumbers = new();
+
         private XmlNodeList? meterEntries;
         private XmlNode? meter;
 
         private const string MeterAttributesFilePath = "C:\\Hospital Meter ATS\\Configurations\\MeterConfigurations.xml";
         private string? meterXPath;
         private static XmlNode? ConfigurationRecords;
+
         public static int deletedCount;
         #endregion
 

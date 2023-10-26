@@ -63,14 +63,14 @@
     </Window.Resources>
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1*" /> 
+            <ColumnDefinition Width="1*" />
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="20" />
             <RowDefinition Height="100" />
             <RowDefinition Height="5*" />
             <RowDefinition Height="1*" />
-        </Grid.RowDefinitions>       
+        </Grid.RowDefinitions>
 
         <Menu Grid.Row="0">
             <MenuItem Header="_File">
@@ -95,7 +95,7 @@
                 </MenuItem>
             </MenuItem>
         </Menu>
-        
+
         <Border Grid.Row="1" BorderBrush="Black" BorderThickness="0,1,0,2">
             <Rectangle Fill="#E9E9E9" />
         </Border>
@@ -109,16 +109,29 @@
             </StackPanel>
         </DockPanel>
 
-        <TextBlock Grid.Row="2" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,150" x:Name="passwordPrompt">
+        <TextBlock Grid.Row="2" FontSize="20" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="0,0,0,200" x:Name="passwordPrompt">
             To use the Meter Attributes XML File Editor, 
             <LineBreak></LineBreak>
-            enter the required password:    
+            enter the required password:
         </TextBlock>
-        <PasswordBox Grid.Row="2" Height="50" Width="250" Margin="0,0,0,0" x:Name="passwordBox" FontSize="25" BorderBrush="Black" BorderThickness="1.5"
-                     Background="LightYellow"  Foreground="Black" FontWeight="Bold" MaxLength="25" PasswordChar="*"
-                     HorizontalContentAlignment="Center" VerticalContentAlignment="Center"/>
 
-        <Button Grid.Row="2" Background="Lime" x:Name="submitPassword" IsDefault="True" FontWeight="Bold" Foreground="Black" Content="Enter" Click="submitPassword_Clicked" Margin="0,150,0,0"/>
+        <PasswordBox Grid.Row="2" Height="50"  Width="250" Margin="0,0,0,0" x:Name="passwordBox" FontSize="25" BorderBrush="Black" BorderThickness="1.5"
+                     Background="LightYellow"  Foreground="Black" FontWeight="Bold" MaxLength="25" PasswordChar="*"
+                     HorizontalContentAlignment="Center" VerticalContentAlignment="Center" KeyDown="passwordBox_KeyDown" />
+        <TextBox Grid.Row="2" Height="50" Width="250" x:Name="passwordShow" FontSize="25" BorderBrush="Black" BorderThickness="1.5"
+                 Background="LightYellow"  Foreground="Black" FontWeight="Bold" MaxLength="25" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" 
+                 KeyDown="passwordBox_KeyDown" Visibility="Collapsed"/>
+
+        <Button Grid.Row="2" Width="35" Height="35" Margin="300,0,0,0" Background="LightYellow" x:Name="eyeshow" Click="eyeshow_Click">
+            <Image Source="Resources/icons/eyeshow.png"/>
+        </Button>
+
+        <Button Grid.Row="2" Width="35" Height="35" Margin="300,0,0,0" Background="LightYellow" x:Name="eyehidden" Click="eyehidden_Click">
+            <Image Source="Resources/icons/eyehidden.png"/>
+        </Button>
+
+        <Button Grid.Row="2" Background="Lime" x:Name="submitPassword" IsDefault="True" FontWeight="Bold" Foreground="Black" Content="Enter"
+                Click="submitPassword_Clicked" Margin="0,200,0,0"/>
 
 
         <StackPanel Grid.Row="2" x:Name="mainMenuView" Margin="0,0,0,50" Visibility="Collapsed">

@@ -26,6 +26,7 @@ namespace Meter_Attributes_Editor.Views
         private string? meterXPath;
 
         public static int stripReaderRowCount;
+
         // These nodes will be used to keep track of the parent and child node that is needed. 
         public static XmlNode stripReaderSoftwareNode = null;
         public static XmlNode stripIDNode1;
@@ -470,6 +471,8 @@ namespace Meter_Attributes_Editor.Views
         #endregion
 
         #region FillFieldsToEdit
+        // This method fills in the textboxes in the xaml to their corresponding entry in the XML file.
+        // Then it assigns the textbox texts to their corresponding element in the list.
         private void FillFieldsToEdit(XmlNodeList fields)
         {
             partNumber.Text = fields[0].InnerText;
@@ -494,7 +497,7 @@ namespace Meter_Attributes_Editor.Views
             Elements[7][1] = boardIDCode.Text;
             Elements[8][1] = hostSoftwareFileFormat.Text;
         }
-
+        
         private void GenerateStripReaderFieldInformation()
         {
             StripReaderDynamicRow currentRow = editMeterGrid.Children[15] as StripReaderDynamicRow;
@@ -578,10 +581,12 @@ namespace Meter_Attributes_Editor.Views
                     stripReaderRowCount = stripReaderSoftwareNode.ChildNodes.Count - 1;
                     editMeterGrid.RowDefinitions.Add(new RowDefinition());
                     CreateStripReaderRow();
+
                     StripReaderDynamicRow dynamicRow = editMeterGrid.Children[15] as StripReaderDynamicRow;
                     dynamicRow.backgroundColor.Background = (Brush)converter.ConvertFromString("LightGoldenrodYellow");
                     dynamicRow = editMeterGrid.Children[16] as StripReaderDynamicRow;
                     dynamicRow.backgroundColor.Background = (Brush)converter.ConvertFromString("#FFDBF5FD");
+
                     ConfigureElements();
                 }
                 else if (stripReaderSoftwareNode.ChildNodes.Count == 3)
@@ -589,11 +594,9 @@ namespace Meter_Attributes_Editor.Views
                     stripReaderRowCount = stripReaderSoftwareNode.ChildNodes.Count - 1;
                     editMeterGrid.RowDefinitions.Add(new RowDefinition());
                     CreateStripReaderRow();
-                    ConfigureElements();
 
                     editMeterGrid.RowDefinitions.Add(new RowDefinition());
                     CreateStripReaderRow();
-                    ConfigureElements();
 
                     StripReaderDynamicRow dynamicRow = editMeterGrid.Children[15] as StripReaderDynamicRow;
                     dynamicRow.backgroundColor.Background = (Brush)converter.ConvertFromString("LightGoldenrodYellow");
@@ -601,6 +604,9 @@ namespace Meter_Attributes_Editor.Views
                     dynamicRow.backgroundColor.Background = (Brush)converter.ConvertFromString("#FFDBF5FD");
                     dynamicRow = editMeterGrid.Children[17] as StripReaderDynamicRow;
                     dynamicRow.backgroundColor.Background = (Brush)converter.ConvertFromString("#FFCDFFE7");
+
+                    ConfigureElements();
+
                 }
 
                 FillFieldsToEdit(meter.ChildNodes);
@@ -627,7 +633,7 @@ namespace Meter_Attributes_Editor.Views
                 Name = stripReaderRowName
             };
 
-            dynamicRow.newStripReaderRow.IsEnabled = false;
+            //dynamicRow.newStripReaderRow.IsEnabled = false;
 
             Grid.SetRow(dynamicRow, rowNum);
             Grid.SetColumnSpan(dynamicRow, 2);
@@ -645,7 +651,6 @@ namespace Meter_Attributes_Editor.Views
                 // editMeterGrid has 15 children after first strip row is created. Disable the previous button by rowNum + 9.
                 dynamicRow = editMeterGrid.Children[rowNum + 9] as StripReaderDynamicRow;
                 dynamicRow.newStripReaderRow.IsEnabled = false;
-
             }
 
         }

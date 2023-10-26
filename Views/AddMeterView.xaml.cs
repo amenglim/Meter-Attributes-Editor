@@ -13,18 +13,25 @@ namespace Meter_Attributes_Editor.Views
     public partial class AddMeterView : UserControl
     {
         #region Global Variables
-        public static AddMeterView? _AddMeterView = null;
+
         private readonly OpenFileDialog openFileDialog;
+
         private static readonly XmlDocument MeterAttributesFile = new();
         private static XmlNode? ConfigurationRecords;
         private static XmlElement? newMeter;
-        public static int stripReaderRowCount;
+
         public static XmlNodeList meterIDList = null;
         private XmlNodeList? meterEntries;
+
+        public static int stripReaderRowCount;
+
+        public static AddMeterView? _AddMeterView = null;
         public static DeleteMeterView? _deleteMeterView;
         public static EditMeterView? _editMeterView;
+
         public static int saveCount;
         public static string meterCount;
+
         private const string MeterAttributesFilePath = "C:\\Hospital Meter ATS\\Configurations\\MeterConfigurations.xml";
         private readonly List<string> partNumbers = new();
 

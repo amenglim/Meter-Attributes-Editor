@@ -12,6 +12,8 @@
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/icons/about.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/icons/check.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/icons/exit.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/icons/eyehidden.png")]
+[assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/icons/eyeshow.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/icons/log.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/icons/print.png")]
 [assembly: System.Windows.Resources.AssemblyAssociatedContentFileAttribute("resources/icons/reset.png")]

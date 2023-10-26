@@ -5,8 +5,9 @@ using System.Diagnostics;
 using System.IO;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
+using System.Windows.Input;
 using System.Windows.Media;
-using System.Windows.Media.Imaging;
 
 namespace Meter_Attributes_Editor
 {
@@ -19,8 +20,8 @@ namespace Meter_Attributes_Editor
         private const string MeterAttributesFilePath = "C:\\Hospital Meter ATS\\Configurations\\MeterConfigurations.xml";
 
         private const string Version = "0.3";
-        private const string Author = "Zachary Johnson & Anthony Meng-Lim";
-        private const string BuildDate = "10/17/2023";
+        private const string Author = "Anthony Meng-Lim";
+        private const string BuildDate = "10/23/2023";
 
         private string saveLocation = "";
 
@@ -30,10 +31,9 @@ namespace Meter_Attributes_Editor
 
         public bool output = false;
 
-
         public MainWindow()
         {
-            InitializeComponent();            
+            InitializeComponent();
 
             createBackup.Visibility = Collapsed;
             saveFile.Visibility = Collapsed;
@@ -92,7 +92,7 @@ namespace Meter_Attributes_Editor
                         MessageBox.Show("New meter entry has been saved. Entry saved to C:\\Hospital Meter ATS\\Configurations\\MeterConfigurations.xml", "Meter Entry Saved", MessageBoxButton.OK, MessageBoxImage.Information);
                     }
                 }
-                catch(Exception ex)
+                catch (Exception ex)
                 {
                     MessageBox.Show("There was an error trying to save the file. Error: " + ex.Message + " Contact Anthony Meng-Lim to assist.", "Error Saving", MessageBoxButton.OK, MessageBoxImage.Error);
                     return;
@@ -160,18 +160,70 @@ namespace Meter_Attributes_Editor
 
         private void submitPassword_Clicked(object sender, RoutedEventArgs e)
         {
-            if (passwordBox.Password == "Nova1000")
+            if (passwordBox.Password == "Nova1000" || passwordShow.Text == "Nova1000")
             {
                 mainMenuView.Visibility = Visibility.Visible;
                 mainMenuBottomView.Visibility = Visibility.Visible;
                 passwordBox.Visibility = Visibility.Collapsed;
-                passwordPrompt.Visibility= Visibility.Collapsed;
-                submitPassword.Visibility= Visibility.Collapsed;
+                passwordPrompt.Visibility = Visibility.Collapsed;
+                submitPassword.Visibility = Visibility.Collapsed;
+                eyehidden.Visibility = Visibility.Collapsed;
+                eyeshow.Visibility = Visibility.Collapsed;
+                passwordShow.Visibility = Visibility.Collapsed;
             }
             else
             {
                 MessageBox.Show("Incorrect password, please try again.", "Incorrect Password", MessageBoxButton.OK, MessageBoxImage.Error);
             }
+        }
+
+        private void passwordBox_KeyDown(object sender, KeyEventArgs e)
+        {
+            if ((Keyboard.GetKeyStates(Key.CapsLock) & KeyStates.Toggled) == KeyStates.Toggled)
+            {
+                if(passwordBox.ToolTip == null)
+                {
+                    ToolTip capslockWarning = new ToolTip();
+                    capslockWarning.Content = "Warning: CapsLock is on";
+                    capslockWarning.FontSize = 20;
+                    capslockWarning.Foreground = Brushes.Red;
+                    capslockWarning.FontWeight = FontWeights.Bold;
+                    capslockWarning.PlacementTarget = sender as UIElement;
+                    capslockWarning.Placement = PlacementMode.Bottom;
+                    passwordBox.ToolTip = capslockWarning;
+                    capslockWarning.IsOpen = true;
+                }
+
+            }
+            else
+            {
+                var currentToolTip = passwordBox.ToolTip as ToolTip;
+                if (currentToolTip != null)
+                {
+                    currentToolTip.IsOpen = false;
+                }
+
+                passwordBox.ToolTip = null;
+            }
+        }
+
+        private void eyeshow_Click(object sender, RoutedEventArgs e)
+        {
+            eyeshow.Visibility = Visibility.Collapsed;
+            eyehidden.Visibility = Visibility.Visible;
+            passwordShow.Visibility = Visibility.Collapsed;
+            passwordBox.Password = passwordShow.Text;
+            passwordBox.PasswordChar = '*';
+
+        }
+
+        private void eyehidden_Click(object sender, RoutedEventArgs e)
+        {
+            eyeshow.Visibility = Visibility.Visible;
+            eyehidden.Visibility = Visibility.Collapsed;
+            passwordShow.Visibility = Visibility.Visible;
+            passwordShow.Text = passwordBox.Password;
+            //passwordBox.PasswordChar = '\0';
         }
     }
 }

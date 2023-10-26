@@ -11,9 +11,9 @@ false
 TRACE;DEBUG;NET;NET7_0;NETCOREAPP
 C:\! Projects\Hospital Meter\Meter-Attributes-Editor\App.xaml
 5113915114
-151628831774
+171891326769
 7-1361299929
-198-200740077
+198-306949569
 MainWindow.xaml;Views\AddMeterView.xaml;Views\DeleteMeterView.xaml;Views\EditMeterView.xaml;Views\StripReaderDynamicRow.xaml;
 
 False
